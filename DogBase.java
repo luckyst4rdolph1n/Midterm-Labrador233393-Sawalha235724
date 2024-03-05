@@ -3,7 +3,7 @@
     	It draws the dog in its default state and in its barking state.
 	
 	@author Zandalee Beck Q. Labrador (233393); Shamika Anne E. Sawalha (235724) 
-	@version 26 February 2024
+	@version 27 February 2024
 	
 	I have not discussed the Java language code in my program 
 	with anyone other than my instructor or the teaching assistants 
