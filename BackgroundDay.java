@@ -3,7 +3,7 @@
     	It serves as the first layer of the drawing.
     	This is also the initial background shown.
 	
-	@authors Zandalee Beck Q. Labrador (233393); Shamika Anne E. Sawalha (235724) 
+	@author Zandalee Beck Q. Labrador (233393); Shamika Anne E. Sawalha (235724) 
 	@version 26 February 2024
 	
 	I have not discussed the Java language code in my program 
