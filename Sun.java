@@ -1,6 +1,7 @@
 /**
-	This Sun class is for drawing the dog.
-    It draws the dog in its default state and in its barking state.
+	This Sun class is for drawing the sun.
+    	The sun only appears in day moded.
+     	This class also contains the foundation of animating the sun's glow.
 	
 	@author Zandalee Beck Q. Labrador (233393); Shamika Anne E. Sawalha (235724) 
 	@version 2 March 2024
