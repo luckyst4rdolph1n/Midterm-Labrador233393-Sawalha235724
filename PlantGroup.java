@@ -25,7 +25,6 @@ public class PlantGroup implements DrawingObject{
     
     private double x;
     private double y;
-    private Color plantColor;
 
     private Plant plants;
 
