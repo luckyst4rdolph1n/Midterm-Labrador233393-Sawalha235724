@@ -20,21 +20,33 @@
 import java.awt.*;
 
 public class Moon implements DrawingObject {
-    double x;
-    double y;
-    double size;
+    private double x;
+    private double y;
+    private double size;
 
-    //constructor for the moon's position and its size
+    private Color gray;
+
+    private boolean state = true;
+
+    /**
+     * Contrsuctor of the Moon class.
+     * @param x
+     * @param y
+     * @param size
+     */
     public Moon(double x, double y, double size){
         this.x = x;
         this.y = y;
         this.size = size;
     }
 
-    //overrides the draw method
+    /**
+     * Overridden method of the DrawingObjects interface.
+     * Renders the Moon object.
+     */
     @Override
     public void draw(Graphics2D g2d){
-        Color gray = new Color(217, 217, 217, 150);
+        gray = new Color(217, 217, 217, 150);
         Circle body = new Circle(x, y, size, Color.WHITE, Color.WHITE);
         Circle glow = new Circle(x-15, y-15, size+30, gray, gray); // halo effect
         //creates crater on top of the body of the moon
@@ -42,11 +54,30 @@ public class Moon implements DrawingObject {
         Circle crater2 = new Circle(x+50, y+10, 35, Color.DARK_GRAY, Color.DARK_GRAY);
         Circle crater3 = new Circle(x+65, y+50, 23, Color.DARK_GRAY, Color.DARK_GRAY);
         
-        glow.draw(g2d);
+        //resizes the glow component of the Moon object for animation
+        if(state){
+            glow = new Circle(x-15, y-15, size+30, gray, new Color(0, 0, 0 ,0));
+            glow.draw(g2d);
+        }else{
+            glow = new Circle(x-20, y-20, size+40, gray, new Color(0, 0, 0 ,0));
+            glow.draw(g2d);
+        }
+
         body.draw(g2d);
         crater1.draw(g2d);
         crater2.draw(g2d);
         crater3.draw(g2d);
+    }
+
+    /**
+     * Switches the state of the Moon object.
+     */
+    public void glow(){
+        if (state){
+            state = false;
+        }else{
+            state = true;
+        }
     }
     
 }
