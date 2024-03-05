@@ -30,6 +30,7 @@ public class SceneFrame{
         frame.addKeyListener(sc.dogBase.forBark);
         frame.addKeyListener(sc.daybg.forDay);
         frame.addKeyListener(sc.nightbg.forNight);
+        frame.addKeyListener(sc.wm.disappear);
 
     }
 
