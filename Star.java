@@ -1,3 +1,23 @@
+/**
+	This Star class is for drawing a star shape.
+    It utilizes the triangle and pentagon classes.
+    Stars will only appear during the night mode.
+	
+	@author Zandalee Beck Q. Labrador (233393); Shamika Anne E. Sawalha (235724) 
+	@version 27 February 2024
+	
+	I have not discussed the Java language code in my program 
+	with anyone other than my instructor or the teaching assistants 
+	assigned to this course.
+
+	I have not used Java language code obtained from another student, 
+	or any other unauthorized source, either modified or unmodified.
+
+	If any Java language code or documentation used in my program 
+	was obtained from another source, such as a textbook or website, 
+	that has been clearly noted with a proper citation in the comments 
+	of my program.
+**/
 import java.awt.*;
 import java.awt.geom.*;
 
@@ -10,6 +30,7 @@ public class Star implements DrawingObject{
 
     private Boolean starState = true;
 
+    //constructor is for the star's position, size, and color
     public Star(double x, double y, double size, Color color){
         this.x = x;
         this.y = y;
@@ -17,9 +38,12 @@ public class Star implements DrawingObject{
         this.color = color;
     }
 
+    //overridinng the draw method
     @Override
     public void draw(Graphics2D g2d){
     AffineTransform reset = g2d.getTransform();
+
+    //draws the star while animating it
     if(starState){
         Triangle t1 = new Triangle(x,y,5,size,color);
         t1.draw(g2d);
@@ -48,6 +72,7 @@ public class Star implements DrawingObject{
         base.draw(g2d);
     }
 
+    //shifts the star's position and orientation
     else{
         int rs = 20;
 
@@ -80,6 +105,7 @@ public class Star implements DrawingObject{
 
     }
 
+    //alternates starState so star can be animated
     public void twinkle(){
         if(starState){
             starState = false;
