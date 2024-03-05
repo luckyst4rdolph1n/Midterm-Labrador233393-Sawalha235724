@@ -1,9 +1,9 @@
 /**
 	This DogBase class is for drawing the dog.
-    	It draws the dog in its default state and in its barking state.
+    It draws the dog in its default state and in its barking state.
 	
 	@author Zandalee Beck Q. Labrador (233393); Shamika Anne E. Sawalha (235724) 
-	@version 27 February 2024
+	@version 26 February 2024
 	
 	I have not discussed the Java language code in my program 
 	with anyone other than my instructor or the teaching assistants 
@@ -92,17 +92,16 @@ public class DogBase implements DrawingObject{
         nose.lineTo(x+35, y+50);
         nose.closePath();
 
-        Line2D.Double whisker1 = new Line2D.Double(x+29, y+46, x+19, y+45);
-        Line2D.Double whisker2 = new Line2D.Double(x+28, y+49, x+19, y+51);
-        Line2D.Double whisker3 = new Line2D.Double(x+40, y+46, x+50, y+45);
-        Line2D.Double whisker4 = new Line2D.Double(x+41, y+49, x+51, y+51);
+        Line whisker1 = new Line(x+29, y+46, x+19, y+45, 1, darkBeige);
+        Line whisker2 = new Line(x+28, y+49, x+19, y+51, 1, darkBeige);
+        Line whisker3 = new Line(x+40, y+46, x+50, y+45, 1, darkBeige);
+        Line whisker4 = new Line(x+41, y+49, x+51, y+51, 1, darkBeige);
         
-        g2d.setStroke(new BasicStroke(1));
         g2d.setColor(darkBeige);
-        g2d.draw(whisker1);
-        g2d.draw(whisker2);
-        g2d.draw(whisker3);
-        g2d.draw(whisker4);
+        whisker1.draw(g2d);
+        whisker2.draw(g2d);
+        whisker3.draw(g2d);
+        whisker4.draw(g2d);
 
         g2d.setColor(outline);
         g2d.draw(mouth);
@@ -188,17 +187,16 @@ public class DogBase implements DrawingObject{
             nose.lineTo(x+35, y+50);
             nose.closePath();
         
-            Line2D.Double whisker1 = new Line2D.Double(x+29, y+46, x+19, y+45);
-            Line2D.Double whisker2 = new Line2D.Double(x+28, y+49, x+19, y+51);
-            Line2D.Double whisker3 = new Line2D.Double(x+40, y+46, x+50, y+45);
-            Line2D.Double whisker4 = new Line2D.Double(x+41, y+49, x+51, y+51);
+            Line whisker1 = new Line(x+29, y+46, x+19, y+45, 1, darkBeige);
+            Line whisker2 = new Line(x+28, y+49, x+19, y+51, 1, darkBeige);
+            Line whisker3 = new Line(x+40, y+46, x+50, y+45, 1, darkBeige);
+            Line whisker4 = new Line(x+41, y+49, x+51, y+51, 1, darkBeige);
             
-            g2d.setStroke(new BasicStroke(1));
-            g2d.setColor(darkBeige);
-            g2d.draw(whisker1);
-            g2d.draw(whisker2);
-            g2d.draw(whisker3);
-            g2d.draw(whisker4);
+            whisker1.draw(g2d);
+            whisker2.draw(g2d);
+            whisker3.draw(g2d);
+            whisker4.draw(g2d);
+
         
             g2d.setColor(red);
             g2d.draw(open);
@@ -227,4 +225,5 @@ public class DogBase implements DrawingObject{
             g2d.fill(earsLeft);
             g2d.fill(earsRight);
     }
+
 }
