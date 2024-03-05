@@ -1,8 +1,8 @@
 /**
 	This KeyHandlers class implements KeyListener for when a user presses certain letters.
-    It is necessaary for switching between day and night mode.
-    It also allows the initial message to disappear.
-    It allows for the barking effect to take plaace.
+    	It is necessaary for switching between day and night mode.
+   	It also allows the initial message to disappear.
+    	It allows for the barking effect to take plaace.
 	
 	@authors Zandalee Beck Q. Labrador (233393); Shamika Anne E. Sawalha (235724) 
 	@version 5 March 2024
