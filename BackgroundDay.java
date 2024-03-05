@@ -7,12 +7,14 @@ public class BackgroundDay implements DrawingObject{
     int y;
     int width;
     int height;
+    KeyHandlers forDay;
     
     public BackgroundDay(int x, int y, int width, int height){
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
+        forDay = new KeyHandlers();
     }
 
     public void draw(Graphics2D g2d){

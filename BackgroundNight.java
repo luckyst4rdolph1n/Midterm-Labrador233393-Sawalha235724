@@ -6,12 +6,14 @@ public class BackgroundNight implements DrawingObject{
     int y;
     int width;
     int height;
+    KeyHandlers forNight;
     
     public BackgroundNight(int x, int y, int width, int height){
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
+        forNight = new KeyHandlers();
     }
 
     public void draw(Graphics2D g2d){
@@ -21,10 +23,9 @@ public class BackgroundNight implements DrawingObject{
         Color nightColor2 = new Color(99, 101, 114);
 
         Rectangle2D.Double background = new Rectangle2D.Double(0, 0, width, height);
-        GradientPaint day = new GradientPaint(pt1, nightColor1, pt2, nightColor2, true);
-        g2d.setPaint(day);
+        GradientPaint night = new GradientPaint(pt1, nightColor1, pt2, nightColor2, true);
+        g2d.setPaint(night);
         g2d.fill(background);
-        Pentagon one = new Pentagon(20, 20, Color.WHITE);
 
     }
 }

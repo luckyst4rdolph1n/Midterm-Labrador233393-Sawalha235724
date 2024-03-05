@@ -23,6 +23,6 @@ public class Line implements DrawingObject{
         Line2D.Double line = new Line2D.Double(startX, startY, endX, endY);
         g2d.setStroke(new BasicStroke(thickness));
         g2d.setColor(color);
-        g2d.fill(line);
+        g2d.draw(line);
     }
 }
