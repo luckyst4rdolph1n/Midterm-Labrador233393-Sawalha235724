@@ -1,7 +1,7 @@
 /**
 	This BackgroundDay class is for the background when in day mode.
-    It serves as the first layer of the drawing.
-    This is also the initial background shown.
+    	It serves as the first layer of the drawing.
+    	This is also the initial background shown.
 	
 	@authors Zandalee Beck Q. Labrador (233393); Shamika Anne E. Sawalha (235724) 
 	@version 26 February 2024
@@ -39,7 +39,7 @@ public class BackgroundDay implements DrawingObject{
         forDay = new KeyHandlers(); //initiated the KeyHandler for shifting modes
     }
 
-    //overriding the draw method 
+    //overrides the draw method of the DrawingObject interface
     @Override
     public void draw(Graphics2D g2d){
         Point2D.Double pt1 = new Point2D.Double(0, 0);
