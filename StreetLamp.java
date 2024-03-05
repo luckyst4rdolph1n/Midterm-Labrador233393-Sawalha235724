@@ -5,7 +5,6 @@ public class StreetLamp implements DrawingObject{
     
     private double x;
     private double y;
-    private Color lampColor;
 
     private Circle light;
     private Rectangle lightBase;
