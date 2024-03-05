@@ -1,6 +1,6 @@
 /**
 	This DogBase class is for drawing the dog.
-    It draws the dog in its default state and in its barking state.
+    	It draws the dog in its default state and in its barking state.
 	
 	@author Zandalee Beck Q. Labrador (233393); Shamika Anne E. Sawalha (235724) 
 	@version 26 February 2024
