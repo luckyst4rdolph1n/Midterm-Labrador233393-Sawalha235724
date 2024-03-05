@@ -1,7 +1,7 @@
 /**
 	This Circle class is for making circles.
-    The circle is a basic and mandatory shape.
-    It is used in drawing other figures.
+    	The circle is a basic and mandatory shape.
+   	 It is used in drawing other figures.
 	
 	@authors Zandalee Beck Q. Labrador (233393); Shamika Anne E. Sawalha (235724) 
 	@version 26 February 2024
