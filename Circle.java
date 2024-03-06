@@ -39,7 +39,10 @@ public class Circle implements DrawingObject{
         this.colorOutline = colorOutline;
     }
 
-    //overrides the draw method of the DrawingObject interface
+    /**
+     * Overridden draw method of the DrawingObject interface.
+     * Renders the Cloud object.
+     */
     @Override
     public void draw(Graphics2D g2d){
         Ellipse2D.Double circle = new Ellipse2D.Double(x, y, size, size);
