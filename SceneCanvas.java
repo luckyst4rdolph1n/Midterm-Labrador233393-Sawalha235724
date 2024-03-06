@@ -26,8 +26,12 @@ import java.util.ArrayList;
 public class SceneCanvas extends JComponent{
     private int width;
     private int height;
+
+    DogBase dogBase;
+    WelcomeMessage welcome;
     BackgroundDay daybg;
     BackgroundNight nightbg;
+
     private GroupTrees dayTrees;
     private GroupTrees nightTrees;
     private Ground ground, grass, grass2, nightGround, nightGrass, nightGrass2;
@@ -35,11 +39,8 @@ public class SceneCanvas extends JComponent{
     private Cloud cloud1, cloud2, cloud3, cloud4;
     private LampGroup dayStreetLamps, nightStreetLamps;
     private PlantGroup dayPlants, nightPlants;
-
     private Star s1, s2, s3, s4, s5, s6, s7, s8, s9;
     private Moon moon;
-
-    DogBase dogBase;
 
     private ArrayList<DrawingObject> dayElements;
     private ArrayList<DrawingObject> nightElements;
@@ -96,6 +97,8 @@ public class SceneCanvas extends JComponent{
         height = h;
         this.setPreferredSize(new Dimension(width, height));
 
+        welcome = new WelcomeMessage(200, 100, 385);
+
         //Instantiated day setting elements
         daybg = new BackgroundDay(0, 0, width, 400);
         ground = new Ground(0, 470, 800, 150, new Color(96, 96, 96));
@@ -129,7 +132,7 @@ public class SceneCanvas extends JComponent{
         s8 = new Star(690, 70, 12, Color.WHITE); 
         s9 = new Star(765, 60, 10, Color.WHITE);
 
-        dogBase = new DogBase(300, 400);
+        dogBase = new DogBase(300, 380);
 
         dayElements = new ArrayList<>();
         setUpDayElements();
@@ -159,6 +162,19 @@ public class SceneCanvas extends JComponent{
          */
         for (int i=0; i<dayElements.size(); i++){
             dayElements.get(i).draw(g2d);
+        }
+
+        // places the welcome message on top of default setting
+        welcome.draw(g2d);
+
+        /**
+         * Makes the welcome meaage disappear based on the condition
+         * fulfilled through KeyListeners.
+         */
+        if(welcome.disappear.disappearMessage){
+            for (int i=0; i<dayElements.size(); i++){
+                dayElements.get(i).draw(g2d);
+            }
         }
 
         /**
