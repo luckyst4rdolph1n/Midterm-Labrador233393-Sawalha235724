@@ -60,7 +60,7 @@ public class Cloud implements DrawingObject {
     }
 
     /**
-     * Overridden method of the DrawingObject interface.
+     * Overridden draw method of the DrawingObject interface.
      * Renders the Cloud object.
      */
     public void draw(Graphics2D g2d){
