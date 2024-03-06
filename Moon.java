@@ -1,6 +1,7 @@
 /**
 	This Moon class is for drawing the moon.
     It can only be seen during the night mode.
+    This class also contains the method for animating the Moon object's glow.
 	
 	@author Zandalee Beck Q. Labrador (233393); Shamika Anne E. Sawalha (235724) 
 	@version 2 March 2024
