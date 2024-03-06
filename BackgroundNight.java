@@ -37,6 +37,10 @@ public class BackgroundNight implements DrawingObject{
         forNight = new KeyHandlers(); //KeyHandler is instantiated here so it can be accessed easily later
     }
 
+     /**
+     * Overridden draw method of the DrawingObject interface.
+     * Renders the Cloud object.
+     */
     public void draw(Graphics2D g2d){
         Point2D.Double pt1 = new Point2D.Double(0, 0);
         Point2D.Double pt2 = new Point2D.Double(0, height);
