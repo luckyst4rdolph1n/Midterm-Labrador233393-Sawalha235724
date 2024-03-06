@@ -42,7 +42,7 @@ public class Moon implements DrawingObject {
     }
 
     /**
-     * Overridden method of the DrawingObjects interface.
+     * Overridden draw method of the DrawingObjects interface.
      * Renders the Moon object.
      */
     @Override
