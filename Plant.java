@@ -25,6 +25,7 @@ public class Plant implements DrawingObject{
     
     private double x;
     private double y;
+    private Color color1, color2, color3;
 
     private Ellipse2D.Double plantLeaf;
 
@@ -32,10 +33,16 @@ public class Plant implements DrawingObject{
      * Constructor of the Plant class.
      * @param x
      * @param y
+     * @param color1
+     * @param color2
+     * @param color3
      */
-    public Plant(double x, double y){
+    public Plant(double x, double y, Color color1, Color color2, Color color3){
         this.x = x;
         this.y = y;
+        this.color1 = color1;
+        this.color2 = color2;
+        this.color3 = color3;
     }
 
     /**
@@ -48,10 +55,10 @@ public class Plant implements DrawingObject{
         AffineTransform reset = g2d.getTransform();
 
         plantLeaf = new Ellipse2D.Double(x, y, 20, 60);
-        g2d.setColor(new Color(50, 96, 4));
+        g2d.setColor(color1);
         g2d.fill(plantLeaf);
 
-        g2d.setColor(new Color(62, 132, 1));
+        g2d.setColor(color2);
         plantLeaf = new Ellipse2D.Double(x, y, 20, 60);
         g2d.rotate(Math.toRadians(30), x+10, y+60);
         g2d.fill(plantLeaf);
@@ -61,7 +68,7 @@ public class Plant implements DrawingObject{
         g2d.fill(plantLeaf);
         g2d.setTransform(reset);
 
-        g2d.setColor(new Color(64, 155, 0));
+        g2d.setColor(color3);
         plantLeaf = new Ellipse2D.Double(x, y, 20, 60);
         g2d.rotate(Math.toRadians(60), x+10, y+60);
         g2d.fill(plantLeaf);

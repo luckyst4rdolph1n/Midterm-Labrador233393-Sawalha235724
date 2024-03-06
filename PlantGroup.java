@@ -25,17 +25,24 @@ public class PlantGroup implements DrawingObject{
     
     private double x;
     private double y;
+    private Color color1, color2, color3;
 
     private Plant plants;
 
     /**
-     * Constructor of the Plant class.
+     * Constructor of the PlantGroup class.
      * @param x
      * @param y
+     * @param color1
+     * @param color2
+     * @param color3
      */
-    public PlantGroup(double x, double y){
+    public PlantGroup(double x, double y, Color color1, Color color2, Color color3){
         this.x = x;
         this.y = y;
+        this.color1 = color1;
+        this.color2 = color2;
+        this.color3 = color3;
     }
 
     /**
@@ -44,7 +51,7 @@ public class PlantGroup implements DrawingObject{
      */
     @Override
     public void draw(Graphics2D g2d){
-        plants = new Plant(x, y);
+        plants = new Plant(x, y, color1, color2, color3);
 
         AffineTransform reset = g2d.getTransform();
 
