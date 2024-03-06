@@ -31,6 +31,7 @@ public class SceneFrame{
     private int height;
     private SceneCanvas sc;
     public boolean barked, day, night;
+    private SoundFx bgm;
 
     /**
      * Constructor for SceneFrame class.
@@ -42,6 +43,7 @@ public class SceneFrame{
         w = width;
         h = height;
         sc = new SceneCanvas(800, 600);
+        bgm = new SoundFx();
     }
 
     /**
@@ -60,6 +62,9 @@ public class SceneFrame{
         frame.addKeyListener(sc.dogBase.forBark);
         frame.addKeyListener(sc.daybg.forDay);
         frame.addKeyListener(sc.nightbg.forNight);
+        frame.addKeyListener(sc.welcome.disappear);
+
+        bgm.PlaySound("bgm.wav", true);
 
     }
 
