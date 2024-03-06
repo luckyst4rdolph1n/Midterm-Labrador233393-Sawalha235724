@@ -7,11 +7,12 @@ public class SceneCanvas extends JComponent{
     private int height;
     BackgroundDay daybg;
     BackgroundNight nightbg;
-    private DayTrees trees;
-    private Ground ground, grass, grass2;
+    private GroupTrees dayTrees;
+    private GroupTrees nightTrees;
+    private Ground ground, grass, grass2, nightGround, nightGrass, nightGrass2;
     private Sun sun;
     private Cloud cloud1, cloud2, cloud3, cloud4;
-    private LampGroup streetLamps;
+    private LampGroup dayStreetLamps, nightStreetLamps;
     private PlantGroup plants;
 
     private Star s1, s2, s3, s4, s5, s6, s7, s8, s9;
@@ -32,9 +33,9 @@ public class SceneCanvas extends JComponent{
         dayElements.add(grass);
         dayElements.add(ground);
         dayElements.add(grass2);
-        dayElements.add(trees);
+        dayElements.add(dayTrees);
         dayElements.add(plants);
-        dayElements.add(streetLamps);
+        dayElements.add(dayStreetLamps);
     }
 
     private void setUpNightElements(){
@@ -49,12 +50,12 @@ public class SceneCanvas extends JComponent{
         nightElements.add(s7);
         nightElements.add(s8);
         nightElements.add(s9);
-        nightElements.add(grass);
-        nightElements.add(ground);
-        nightElements.add(grass2);
-        nightElements.add(trees);
+        nightElements.add(nightGrass);
+        nightElements.add(nightGround);
+        nightElements.add(nightGrass2);
+        nightElements.add(nightTrees);
         nightElements.add(plants);
-        nightElements.add(streetLamps);
+        nightElements.add(nightStreetLamps);
     }
 
     public SceneCanvas(int w, int h){
@@ -62,18 +63,23 @@ public class SceneCanvas extends JComponent{
         height = h;
         this.setPreferredSize(new Dimension(width, height));
         daybg = new BackgroundDay(0, 0, width, 400);
-        nightbg = new BackgroundNight(0, 0, width, height);
+        nightbg = new BackgroundNight(0, 0, width, 400);
         ground = new Ground(0, 470, 800, 150, new Color(96, 96, 96));
         grass = new Ground(0, 400, 800, 150, new Color(175, 204, 54));
         grass2 = new Ground(0, 550, 800, 150, new Color(175, 204, 54));
+        nightGround = new Ground(0, 470, 800, 150, new Color(58, 57, 61));
+        nightGrass = new Ground(0, 400, 800, 150, new Color(17, 28, 49));
+        nightGrass2 = new Ground(0, 550, 800, 150, new Color(17, 28, 49));
         sun = new Sun(300, 100, 150, new Color(255, 233, 95, 130));
         cloud1 = new Cloud(150, 40, 70, new Color(255, 255, 255));
         cloud2 = new Cloud(450, 20, 60, new Color(255, 255, 255));
         cloud3 = new Cloud(700, 30, 70, new Color(255, 255, 255));
         cloud4 = new Cloud(-100, 10, 70, new Color(255, 255, 255));
-        trees = new DayTrees(100, 450);
+        dayTrees = new GroupTrees(100, 450, new Color(108, 60, 31), new Color(0, 139, 50), new Color(1, 104, 32), new Color(0, 105, 37), new Color(0, 162, 50), new Color(0, 124, 36));
+        nightTrees = new GroupTrees(100, 450, new Color(20, 56, 82), new Color(3, 48, 69), new Color(6, 43, 61), new Color(5, 42, 60), new Color(4, 74, 100), new Color(7, 63, 88));
         plants = new PlantGroup(300, 400);
-        streetLamps = new LampGroup(100, 80);
+        dayStreetLamps = new LampGroup(100, 80, new Color(216, 255, 255));
+        nightStreetLamps = new LampGroup(100, 80, Color.YELLOW);
 
         dogBase = new DogBase(300, 400);
 
@@ -144,6 +150,10 @@ public class SceneCanvas extends JComponent{
 
     public Sun getSun(){
         return sun;
+    }
+
+    public Moon getMoon(){
+        return moon;
     }
 
     public Star getS1(){
